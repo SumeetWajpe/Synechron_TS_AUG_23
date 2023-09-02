@@ -22,11 +22,11 @@ z = { x: 100 };
 //var cars = new Array("BMW", "AUDI");
 // OR
 // Using Generics
-var cars: Array<string> = new Array<string>("BMW", "AUDI", "MERC");
+// var cars: Array<string> = new Array<string>("BMW", "AUDI", "MERC");
 
-for (const car of cars) {
-  console.log(car);
-}
+// for (const car of cars) {
+//   console.log(car);
+// }
 
 if (true) {
   let q;
@@ -39,6 +39,13 @@ if (true) {
 // const PI: number = 3.14;
 // PI = 3.1434; // Error !
 
-const player = { name: "Neeraj Chopra", country: "INDIA" };
+// const player = { name: "Neeraj Chopra", country: "INDIA" };
 // player = {};// Error !
-player.country = "Bharat";
+// player.country = "Bharat";
+
+// Spread Operator
+let cars: string[] = ["BMW", "AUDI", "FERRARI"];
+let moreCars: string[] = ["TATA", "MAHINDRA"];
+let allCars: string[] = [...cars, ...moreCars, "MARUTI"];
+console.log(allCars);
+cars[0] = "PQR";

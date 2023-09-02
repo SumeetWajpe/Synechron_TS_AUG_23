@@ -1,5 +1,14 @@
 // var x = 100;
 // x = "Hello !";
+var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
+    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
+        if (ar || !(i in from)) {
+            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+            ar[i] = from[i];
+        }
+    }
+    return to.concat(ar || Array.prototype.slice.call(from));
+};
 var x = 100; //Type Inferencing
 var s = "Hello !";
 var y = 200; // Type annotation
@@ -19,11 +28,10 @@ z = { x: 100 };
 //var cars = new Array("BMW", "AUDI");
 // OR
 // Using Generics
-var cars = new Array("BMW", "AUDI", "MERC");
-for (var _i = 0, cars_1 = cars; _i < cars_1.length; _i++) {
-    var car = cars_1[_i];
-    console.log(car);
-}
+// var cars: Array<string> = new Array<string>("BMW", "AUDI", "MERC");
+// for (const car of cars) {
+//   console.log(car);
+// }
 if (true) {
     var q = void 0;
     q = 100;
@@ -33,6 +41,12 @@ if (true) {
 }
 // const PI: number = 3.14;
 // PI = 3.1434; // Error !
-var player = { name: "Neeraj Chopra", country: "INDIA" };
+// const player = { name: "Neeraj Chopra", country: "INDIA" };
 // player = {};// Error !
-player.country = "Bharat";
+// player.country = "Bharat";
+// Spread Operator
+var cars = ["BMW", "AUDI", "FERRARI"];
+var moreCars = ["TATA", "MAHINDRA"];
+var allCars = __spreadArray(__spreadArray(__spreadArray([], cars, true), moreCars, true), ["MARUTI"], false);
+console.log(allCars);
+cars[0] = "PQR";
