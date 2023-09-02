@@ -27,9 +27,26 @@
 
 // Optional Parameters
 
-function PrintBook(author: string, title: string, noOfPages?: number) {
+// function PrintBook(author: string, title: string, noOfPages?: number) {
+//   console.log(author, title, noOfPages);
+// }
+
+// PrintBook(); // undefined X 3
+// PrintBook("Dr. APJ Abdul Kalam", "Wings Of Fire");
+// PrintBook("Dr. APJ Abdul Kalam", "Wings Of Fire", 300);
+
+// Default Parameters
+
+function PrintBook(
+  author: string = "Unknown",
+  title: string = "Unknown",
+  noOfPages: number = 0,
+): void {
+  //   author = author || "Unknown";
+  //   title = title || "Unknown";
+  //   noOfPages = noOfPages || 0;
   console.log(author, title, noOfPages);
 }
 
-PrintBook("Dr. APJ Abdul Kalam", "Wings Of Fire");
-PrintBook("Dr. APJ Abdul Kalam", "Wings Of Fire", 300);
+PrintBook();
+PrintBook("Shivaji Sawant", "Mryutyunjay", 500);

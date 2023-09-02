@@ -20,8 +20,21 @@
 //   return 100;
 // }
 // Optional Parameters
+// function PrintBook(author: string, title: string, noOfPages?: number) {
+//   console.log(author, title, noOfPages);
+// }
+// PrintBook(); // undefined X 3
+// PrintBook("Dr. APJ Abdul Kalam", "Wings Of Fire");
+// PrintBook("Dr. APJ Abdul Kalam", "Wings Of Fire", 300);
+// Default Parameters
 function PrintBook(author, title, noOfPages) {
+    if (author === void 0) { author = "Unknown"; }
+    if (title === void 0) { title = "Unknown"; }
+    if (noOfPages === void 0) { noOfPages = 0; }
+    //   author = author || "Unknown";
+    //   title = title || "Unknown";
+    //   noOfPages = noOfPages || 0;
     console.log(author, title, noOfPages);
 }
-PrintBook("Dr. APJ Abdul Kalam", "Wings Of Fire");
-PrintBook("Dr. APJ Abdul Kalam", "Wings Of Fire", 300);
+PrintBook();
+PrintBook("Shivaji Sawant", "Mryutyunjay", 500);
