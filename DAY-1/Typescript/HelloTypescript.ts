@@ -49,3 +49,8 @@ let moreCars: string[] = ["TATA", "MAHINDRA"];
 let allCars: string[] = [...cars, ...moreCars, "MARUTI"];
 console.log(allCars);
 cars[0] = "PQR";
+
+// With Objects
+let person = { name: "Carlos Alcaraz", country: "Spain" };
+let player = { ...person, age: 20, grandSlamsWon: 2 };
+console.log(player);
