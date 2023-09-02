@@ -37,16 +37,23 @@
 
 // Default Parameters
 
-function PrintBook(
-  author: string = "Unknown",
-  title: string = "Unknown",
-  noOfPages: number = 0,
-): void {
-  //   author = author || "Unknown";
-  //   title = title || "Unknown";
-  //   noOfPages = noOfPages || 0;
-  console.log(author, title, noOfPages);
-}
+// function PrintBook(
+//   author: string = "Unknown",
+//   title: string = "Unknown",
+//   noOfPages: number = 0,
+// ): void {
+//   //   author = author || "Unknown";
+//   //   title = title || "Unknown";
+//   //   noOfPages = noOfPages || 0;
+//   console.log(author, title, noOfPages);
+// }
 
-PrintBook();
-PrintBook("Shivaji Sawant", "Mryutyunjay", 500);
+// PrintBook();
+// PrintBook("Shivaji Sawant", "Mryutyunjay", 500);
+
+// Rest Parameters
+
+function PrintBook(author: string, ...titles: string[]) {
+  console.log(author, titles);
+}
+PrintBook("Shivaji Sawant", "Mryutyunjay", "Yugandhar");
