@@ -40,11 +40,12 @@
 // PrintBook();
 // PrintBook("Shivaji Sawant", "Mryutyunjay", 500);
 // Rest Parameters
-function PrintBook(author) {
-    var titles = [];
-    for (var _i = 1; _i < arguments.length; _i++) {
-        titles[_i - 1] = arguments[_i];
-    }
-    console.log(author, titles);
-}
-PrintBook("Shivaji Sawant", "Mryutyunjay", "Yugandhar");
+// function PrintBook(author?: string, ...titles: string[]) {
+//   console.log(author, titles);
+// }
+// PrintBook();
+// PrintBook("Shivaji Sawant", "Mryutyunjay", "Yugandhar");
+// Arrow Functions
+var cars = ["BMW", "AUDI", "MERC"];
+cars.forEach(function (car) { return console.log(car); });
+var Add = function (x, y) { return x + y; };

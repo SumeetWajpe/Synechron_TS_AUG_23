@@ -53,7 +53,14 @@
 
 // Rest Parameters
 
-function PrintBook(author: string, ...titles: string[]) {
-  console.log(author, titles);
-}
-PrintBook("Shivaji Sawant", "Mryutyunjay", "Yugandhar");
+// function PrintBook(author?: string, ...titles: string[]) {
+//   console.log(author, titles);
+// }
+// PrintBook();
+// PrintBook("Shivaji Sawant", "Mryutyunjay", "Yugandhar");
+
+// Arrow Functions
+var cars: string[] = ["BMW", "AUDI", "MERC"];
+cars.forEach((car: string) => console.log(car));
+
+var Add = (x: number, y: number): number => x + y;
