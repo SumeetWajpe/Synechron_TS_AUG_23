@@ -1,13 +1,13 @@
-enum Designation {
-  Developer = 100,
-  Tester = 200,
-  Trainer = 300,
-  Architect = 400,
-}
+// enum Designation {
+//   Developer = 100,
+//   Tester = 200,
+//   Trainer = 300,
+//   Architect = 400,
+// }
 
-let d: Designation = Designation.Tester;
-console.log(d); // 200
-console.log(Designation[d]); // Tester
+// let d: Designation = Designation.Tester;
+// console.log(d); // 200
+// console.log(Designation[d]); // Tester
 // class Emp {
 //   designation: Designation;
 // }
@@ -83,3 +83,30 @@ console.log(Designation[d]); // Tester
 // };
 
 // Inheritance
+
+class Car {
+  name: string;
+  speed: number;
+  constructor(name: string = "BMW", speed: number = 200) {
+    this.name = name;
+    this.speed = speed;
+  }
+  accelerate(): string {
+    return "The car " + this.name + " is running @ " + this.speed + " kmph !";
+  }
+}
+
+// var carObj = new Car();
+// console.log(carObj.accelerate());
+
+class JamesBondCar extends Car {
+  isArmed: boolean = false;
+  constructor(name: string, speed: number, isArmed: boolean) {
+    super(name, speed);
+    this.isArmed = isArmed;
+  }
+}
+
+var jbc = new JamesBondCar("Aston Martin", 300, true);
+
+console.log(jbc.accelerate());
