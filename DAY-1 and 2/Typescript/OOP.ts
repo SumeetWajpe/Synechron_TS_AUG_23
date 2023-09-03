@@ -54,18 +54,32 @@ console.log(Designation[d]); // Tester
 //   new Movie("Swades", 1000000, MovieCategory.Fiction),
 // );
 
-interface IMovie {
-  name: string;
-  budget: number;
-  theatre?: string;
-  getDetails: () => string;
-}
+// interface IMovie {
+//   name: string;
+//   budget: number;
+//   theatre?: string;
+//   getDetails: () => string;
+// }
 
-let movie: IMovie = {
-  name: "Sholay",
-  budget: 100000,
-  getDetails() {
-    return "The movie " + this.name + " is having budget of Rs." + this.budget;
-  },
-};
-console.log(movie.getDetails());
+// let movie: IMovie = {
+//   name: "Sholay",
+//   budget: 100000,
+//   getDetails() {
+//     return "The movie " + this.name + " is having budget of Rs." + this.budget;
+//   },
+// };
+// console.log(movie.getDetails());
+
+// type Movie = {
+//   name: string;
+//   budget: number;
+//   theatre?: string;
+//   getDetails?: () => string;
+// };
+
+// let movie: Movie = {
+//   name: "Sholay",
+//   budget: 100000,
+// };
+
+// Inheritance
