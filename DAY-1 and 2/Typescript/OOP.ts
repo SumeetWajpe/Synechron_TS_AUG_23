@@ -226,13 +226,21 @@
 
 // Nested Level
 
-let product = {
-  pname: "Macbook Pro",
-  details: { price: 250000, rating: 5, nooflikes: 500 },
-};
+// let product = {
+//   pname: "Macbook Pro",
+//   details: { price: 250000, rating: 5, nooflikes: 500 },
+// };
 
-let {
-  pname,
-  details: { price, rating, nooflikes: likes },
-} = product;
-console.log(price, pname, rating, likes);
+// let {
+//   pname,
+//   details: { price, rating, nooflikes: likes },
+// } = product;
+// console.log(price, pname, rating, likes);
+
+// Enhanced object literal syntax
+let title: string = "Wings Of Fire";
+let author: string = "Dr. APJ Abdul Kalam";
+var book = { title: title, author: author };
+// OR
+const enhancedBook = { title, author };
+console.log(enhancedBook.title);

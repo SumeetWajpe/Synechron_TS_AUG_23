@@ -183,9 +183,19 @@
 // PrintProduct(product);
 // console.log(product.pname);
 // Nested Level
-var product = {
-    pname: "Macbook Pro",
-    details: { price: 250000, rating: 5, nooflikes: 500 },
-};
-var pname = product.pname, _a = product.details, price = _a.price, rating = _a.rating, likes = _a.nooflikes;
-console.log(price, pname, rating, likes);
+// let product = {
+//   pname: "Macbook Pro",
+//   details: { price: 250000, rating: 5, nooflikes: 500 },
+// };
+// let {
+//   pname,
+//   details: { price, rating, nooflikes: likes },
+// } = product;
+// console.log(price, pname, rating, likes);
+// Enhanced object literal syntax
+var title = "Wings Of Fire";
+var author = "Dr. APJ Abdul Kalam";
+var book = { title: title, author: author };
+// OR
+var enhancedBook = { title: title, author: author };
+console.log(enhancedBook.title);
