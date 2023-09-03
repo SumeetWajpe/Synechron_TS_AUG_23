@@ -87,6 +87,7 @@
 class Car {
   name: string;
   speed: number;
+  static carMake: number = 1994;
   constructor(name: string = "BMW", speed: number = 200) {
     this.name = name;
     this.speed = speed;
@@ -94,19 +95,97 @@ class Car {
   accelerate(): string {
     return "The car " + this.name + " is running @ " + this.speed + " kmph !";
   }
-}
 
-// var carObj = new Car();
-// console.log(carObj.accelerate());
-
-class JamesBondCar extends Car {
-  isArmed: boolean = false;
-  constructor(name: string, speed: number, isArmed: boolean) {
-    super(name, speed);
-    this.isArmed = isArmed;
+  static getDetails(): void {
+    console.log(Car.carMake);
   }
 }
 
-var jbc = new JamesBondCar("Aston Martin", 300, true);
+var carObj = new Car();
+Car.getDetails();
+// console.log(carObj.accelerate());
 
-console.log(jbc.accelerate());
+// class JamesBondCar extends Car {
+//   isArmed: boolean = false;
+//   constructor(name: string, speed: number, isArmed: boolean) {
+//     super(name, speed);
+//     this.isArmed = isArmed;
+//   }
+//   accelerate(): string {
+//     return super.accelerate() + " Is it armed ?" + this.isArmed;
+//   }
+// }
+
+// Multi level Inheritance allowed, but multiple not allowed
+// class BatmanCar extends JamesBondCar{
+
+// }
+
+// var jbc = new JamesBondCar("Aston Martin", 300, true);
+
+// console.log(jbc.accelerate());
+
+// interface IPerson {
+//   age: number;
+// }
+
+// interface IEmployee {
+//   id: number;
+//   name: string;
+//   salary: number;
+// }
+
+// class Employee implements IEmployee, IPerson {
+//   id: number;
+//   name: string;
+//   salary: number;
+//   age: number;
+// }
+
+// OR
+
+// interface IPerson {
+//   age: number;
+//   name: string;
+// }
+
+// interface IEmployee extends IPerson {
+//   id: number;
+//   salary: number;
+//   getSalary: () => number;
+// }
+
+// class Employee implements IEmployee {
+//   id: number;
+//   name: string;
+//   salary: number;
+//   age: number;
+//   getSalary(): number {
+//     return this.salary;
+//   }
+// }
+
+// Enhanced class syntax
+
+class EnhancedCar {
+  constructor(public name: string = "AUDI", public speed: number = 200) {}
+  accelerate() {
+    return "The car " + this.name + " is running @ " + this.speed + " kmph !";
+  }
+}
+
+var eCar = new EnhancedCar();
+console.log(eCar.accelerate());
+
+// String Interpolation
+let product = { name: "Macbook Pro", price: 250000 };
+
+console.log("The product " + product.name + " costs Rs." + product.price);
+console.log(`The product ${product.name} costs Rs.${product.price}`);
+
+let multiLineStr = `First Line
+Second Line
+Third Line 
+  Fourth Line !`;
+
+console.log(multiLineStr);

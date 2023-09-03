@@ -4,21 +4,6 @@
 //   Trainer = 300,
 //   Architect = 400,
 // }
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 // let d: Designation = Designation.Tester;
 // console.log(d); // 200
 // console.log(Designation[d]); // Tester
@@ -95,19 +80,81 @@ var Car = /** @class */ (function () {
     Car.prototype.accelerate = function () {
         return "The car " + this.name + " is running @ " + this.speed + " kmph !";
     };
+    Car.getDetails = function () {
+        console.log(Car.carMake);
+    };
+    Car.carMake = 1994;
     return Car;
 }());
-// var carObj = new Car();
+var carObj = new Car();
+Car.getDetails();
 // console.log(carObj.accelerate());
-var JamesBondCar = /** @class */ (function (_super) {
-    __extends(JamesBondCar, _super);
-    function JamesBondCar(name, speed, isArmed) {
-        var _this = _super.call(this, name, speed) || this;
-        _this.isArmed = false;
-        _this.isArmed = isArmed;
-        return _this;
+// class JamesBondCar extends Car {
+//   isArmed: boolean = false;
+//   constructor(name: string, speed: number, isArmed: boolean) {
+//     super(name, speed);
+//     this.isArmed = isArmed;
+//   }
+//   accelerate(): string {
+//     return super.accelerate() + " Is it armed ?" + this.isArmed;
+//   }
+// }
+// Multi level Inheritance allowed, but multiple not allowed
+// class BatmanCar extends JamesBondCar{
+// }
+// var jbc = new JamesBondCar("Aston Martin", 300, true);
+// console.log(jbc.accelerate());
+// interface IPerson {
+//   age: number;
+// }
+// interface IEmployee {
+//   id: number;
+//   name: string;
+//   salary: number;
+// }
+// class Employee implements IEmployee, IPerson {
+//   id: number;
+//   name: string;
+//   salary: number;
+//   age: number;
+// }
+// OR
+// interface IPerson {
+//   age: number;
+//   name: string;
+// }
+// interface IEmployee extends IPerson {
+//   id: number;
+//   salary: number;
+//   getSalary: () => number;
+// }
+// class Employee implements IEmployee {
+//   id: number;
+//   name: string;
+//   salary: number;
+//   age: number;
+//   getSalary(): number {
+//     return this.salary;
+//   }
+// }
+// Enhanced class syntax
+var EnhancedCar = /** @class */ (function () {
+    function EnhancedCar(name, speed) {
+        if (name === void 0) { name = "AUDI"; }
+        if (speed === void 0) { speed = 200; }
+        this.name = name;
+        this.speed = speed;
     }
-    return JamesBondCar;
-}(Car));
-var jbc = new JamesBondCar("Aston Martin", 300, true);
-console.log(jbc.accelerate());
+    EnhancedCar.prototype.accelerate = function () {
+        return "The car " + this.name + " is running @ " + this.speed + " kmph !";
+    };
+    return EnhancedCar;
+}());
+var eCar = new EnhancedCar();
+console.log(eCar.accelerate());
+// String Interpolation
+var product = { name: "Macbook Pro", price: 250000 };
+console.log("The product " + product.name + " costs Rs." + product.price);
+console.log("The product ".concat(product.name, " costs Rs.").concat(product.price));
+var multiLineStr = "First Line\nSecond Line\nThird Line \n  Fourth Line !";
+console.log(multiLineStr);
