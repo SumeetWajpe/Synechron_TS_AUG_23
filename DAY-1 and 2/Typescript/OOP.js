@@ -70,24 +70,23 @@
 //   budget: 100000,
 // };
 // Inheritance
-var Car = /** @class */ (function () {
-    function Car(name, speed) {
-        if (name === void 0) { name = "BMW"; }
-        if (speed === void 0) { speed = 200; }
-        this.name = name;
-        this.speed = speed;
-    }
-    Car.prototype.accelerate = function () {
-        return "The car " + this.name + " is running @ " + this.speed + " kmph !";
-    };
-    Car.getDetails = function () {
-        console.log(Car.carMake);
-    };
-    Car.carMake = 1994;
-    return Car;
-}());
-var carObj = new Car();
-Car.getDetails();
+// class Car {
+//   name: string;
+//   speed: number;
+//   static carMake: number = 1994;
+//   constructor(name: string = "BMW", speed: number = 200) {
+//     this.name = name;
+//     this.speed = speed;
+//   }
+//   accelerate(): string {
+//     return "The car " + this.name + " is running @ " + this.speed + " kmph !";
+//   }
+//   static getDetails(): void {
+//     console.log(Car.carMake);
+//   }
+// }
+// var carObj = new Car();
+// Car.getDetails();
 // console.log(carObj.accelerate());
 // class JamesBondCar extends Car {
 //   isArmed: boolean = false;
@@ -138,23 +137,55 @@ Car.getDetails();
 //   }
 // }
 // Enhanced class syntax
-var EnhancedCar = /** @class */ (function () {
-    function EnhancedCar(name, speed) {
-        if (name === void 0) { name = "AUDI"; }
-        if (speed === void 0) { speed = 200; }
-        this.name = name;
-        this.speed = speed;
-    }
-    EnhancedCar.prototype.accelerate = function () {
-        return "The car " + this.name + " is running @ " + this.speed + " kmph !";
-    };
-    return EnhancedCar;
-}());
-var eCar = new EnhancedCar();
-console.log(eCar.accelerate());
-// String Interpolation
-var product = { name: "Macbook Pro", price: 250000 };
-console.log("The product " + product.name + " costs Rs." + product.price);
-console.log("The product ".concat(product.name, " costs Rs.").concat(product.price));
-var multiLineStr = "First Line\nSecond Line\nThird Line \n  Fourth Line !";
-console.log(multiLineStr);
+// class EnhancedCar {
+//   constructor(public name: string = "AUDI", public speed: number = 200) {}
+//   accelerate() {
+//     // return "The car " + this.name + " is running @ " + this.speed + " kmph !";
+//     return `The car ${this.name} is running @ ${this.speed} kmph !`;
+//   }
+// }
+// var eCar = new EnhancedCar();
+// console.log(eCar.accelerate());
+// // String Interpolation
+// let product = { name: "Macbook Pro", price: 250000 };
+// console.log("The product " + product.name + " costs Rs." + product.price);
+// console.log(`The product ${product.name} costs Rs.${product.price}`);
+// let multiLineStr = `First Line
+// Second Line
+// Third Line
+//   Fourth Line !`;
+// console.log(multiLineStr);
+// Destructuring -> Arrays
+// let cars: string[] = ["BMW", "AUDI", "TATA", "MERC"];
+// let firstCar: string = cars[0];
+// let secondCar: string = cars[1];
+// OR
+// let [firstCar, secondCar, thirdCar] = cars;
+// let [, secondCar, , fourthCar = "MAHINDRA"] = cars;
+// console.log(fourthCar);
+// Destructuring -> Objects
+// let product = { pname: "Macbook Pro", price: 250000, rating: 5, likes: 500 };
+// // let pname: string = product.pname;
+// // let price: number = product.price;
+// // let rating: number = product.rating;
+// let { rating, pname, price } = product;
+// console.log(pname, rating);
+// function GetProduct() {
+//   return { pname: "Macbook Pro", price: 250000, rating: 5, likes: 500 };
+// }
+// let { price } = GetProduct();
+// console.log(price);
+// OR
+// let product = { pname: "Macbook Pro", price: 250000, rating: 5, likes: 500 };
+// function PrintProduct({ pname, price }) {
+//   console.log(product.pname, product.price);
+// }
+// PrintProduct(product);
+// console.log(product.pname);
+// Nested Level
+var product = {
+    pname: "Macbook Pro",
+    details: { price: 250000, rating: 5, nooflikes: 500 },
+};
+var pname = product.pname, _a = product.details, price = _a.price, rating = _a.rating, likes = _a.nooflikes;
+console.log(price, pname, rating, likes);

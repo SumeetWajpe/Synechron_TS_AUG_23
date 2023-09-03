@@ -84,25 +84,25 @@
 
 // Inheritance
 
-class Car {
-  name: string;
-  speed: number;
-  static carMake: number = 1994;
-  constructor(name: string = "BMW", speed: number = 200) {
-    this.name = name;
-    this.speed = speed;
-  }
-  accelerate(): string {
-    return "The car " + this.name + " is running @ " + this.speed + " kmph !";
-  }
+// class Car {
+//   name: string;
+//   speed: number;
+//   static carMake: number = 1994;
+//   constructor(name: string = "BMW", speed: number = 200) {
+//     this.name = name;
+//     this.speed = speed;
+//   }
+//   accelerate(): string {
+//     return "The car " + this.name + " is running @ " + this.speed + " kmph !";
+//   }
 
-  static getDetails(): void {
-    console.log(Car.carMake);
-  }
-}
+//   static getDetails(): void {
+//     console.log(Car.carMake);
+//   }
+// }
 
-var carObj = new Car();
-Car.getDetails();
+// var carObj = new Car();
+// Car.getDetails();
 // console.log(carObj.accelerate());
 
 // class JamesBondCar extends Car {
@@ -167,25 +167,72 @@ Car.getDetails();
 
 // Enhanced class syntax
 
-class EnhancedCar {
-  constructor(public name: string = "AUDI", public speed: number = 200) {}
-  accelerate() {
-    return "The car " + this.name + " is running @ " + this.speed + " kmph !";
-  }
-}
+// class EnhancedCar {
+//   constructor(public name: string = "AUDI", public speed: number = 200) {}
+//   accelerate() {
+//     // return "The car " + this.name + " is running @ " + this.speed + " kmph !";
+//     return `The car ${this.name} is running @ ${this.speed} kmph !`;
+//   }
+// }
 
-var eCar = new EnhancedCar();
-console.log(eCar.accelerate());
+// var eCar = new EnhancedCar();
+// console.log(eCar.accelerate());
 
-// String Interpolation
-let product = { name: "Macbook Pro", price: 250000 };
+// // String Interpolation
+// let product = { name: "Macbook Pro", price: 250000 };
 
-console.log("The product " + product.name + " costs Rs." + product.price);
-console.log(`The product ${product.name} costs Rs.${product.price}`);
+// console.log("The product " + product.name + " costs Rs." + product.price);
+// console.log(`The product ${product.name} costs Rs.${product.price}`);
 
-let multiLineStr = `First Line
-Second Line
-Third Line 
-  Fourth Line !`;
+// let multiLineStr = `First Line
+// Second Line
+// Third Line
+//   Fourth Line !`;
 
-console.log(multiLineStr);
+// console.log(multiLineStr);
+
+// Destructuring -> Arrays
+// let cars: string[] = ["BMW", "AUDI", "TATA", "MERC"];
+// let firstCar: string = cars[0];
+// let secondCar: string = cars[1];
+// OR
+// let [firstCar, secondCar, thirdCar] = cars;
+// let [, secondCar, , fourthCar = "MAHINDRA"] = cars;
+// console.log(fourthCar);
+
+// Destructuring -> Objects
+// let product = { pname: "Macbook Pro", price: 250000, rating: 5, likes: 500 };
+// // let pname: string = product.pname;
+// // let price: number = product.price;
+// // let rating: number = product.rating;
+// let { rating, pname, price } = product;
+// console.log(pname, rating);
+
+// function GetProduct() {
+//   return { pname: "Macbook Pro", price: 250000, rating: 5, likes: 500 };
+// }
+
+// let { price } = GetProduct();
+// console.log(price);
+
+// OR
+
+// let product = { pname: "Macbook Pro", price: 250000, rating: 5, likes: 500 };
+// function PrintProduct({ pname, price }) {
+//   console.log(product.pname, product.price);
+// }
+// PrintProduct(product);
+// console.log(product.pname);
+
+// Nested Level
+
+let product = {
+  pname: "Macbook Pro",
+  details: { price: 250000, rating: 5, nooflikes: 500 },
+};
+
+let {
+  pname,
+  details: { price, rating, nooflikes: likes },
+} = product;
+console.log(price, pname, rating, likes);
